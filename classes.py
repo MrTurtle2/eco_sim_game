@@ -7,7 +7,7 @@ class Human:
     '''base player and AI class'''
     
     population = 0
-    def __init__(self, name, age, health, speed, weight, height, intellect, strength, inventory=[], skills=[], position, dead=False):
+    def __init__(self, name, age, health, speed, weight, height, intellect, strength,position, inventory=[], skills=[], dead=False):
         '''name = string
            age = int
            health = int
