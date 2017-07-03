@@ -7,29 +7,47 @@ class Human:
     '''base player and AI class'''
     
     population = 0
-    def __init__(self, name, age, health, speed, weight, height, intellect, strength,position, inventory=[], skills=[], dead=False):
+    def __init__(self, name, age, health, thirst, hunger, vitamin, energy, vision, hearing, agility, dexterity, intellect, strength, weight, height, location=[0,0], inventory=[], skills=[], dead=False):
         '''name = string
            age = int
-           health = int
-           speed = int
-           weight = int
+           health = int (hit points)
+           speed = int (general move speed determined by other attributes(equation pls))
+           weight = int 
            intellect = int
-           strength = int
-           inventory = list of list[item, quantity]
+           strength = int (carring capacity + manipulation)
+           agility = int (reduces effect of rough terrain)
+           dexterity = int (manipultion)
+           vision = int (fov)
+           hearing = int (sound fall off)
+           vitamin = int (essential nutrient level)
+           hunger = int (protein)
+           energy = int (sugars + polymers)
+           exposure = int (determined by location/surroundings)
+           inventory = list of list['item', quantity]
            skills = list of strings/objects
-           position = coords [x,y]
+           location = coords [x,y]
            extend me please
         '''
         self.name = name
         self.age = age
-        self.health = health 
-        self.speed = speed
-        self.weight = weight
+        self.health = health
+        self.thirst = thirst
+        self.vitamin = vitamin
+        self.hunger = hunger        
+        self.energy = energy
+        self.vision = vision
+        self.hearing = hearing        
+        self.agility = agility        
         self.intellect = intellect
         self.strength = strength
+        self.speed = self.get_speed() # determined by other attributes
+        self.weight = weight
+        self.height = height
+        self.location = location
         self.inventory = inventory
         self.skills = skills 
-        self.position = position
+        self.exposure = self.get_exposure() # determined by surroundings
+        self.coretemp = 3650 #36.50 can add more s.f.
 
         Human.population += 1
     
@@ -78,4 +96,18 @@ class Human:
     def get_surroundings(self):
         '''returns what is in vision for human
         '''
+    
+    def get_speed(self):
+        '''updates human speed (wip)
+        '''
+    
+    def get_exposure(self):
+        '''updates exposure (wip)
+        '''
         
+        
+person = Human('name', 20, 100, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 80, 180)     
+        
+        
+        
+    
