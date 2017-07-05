@@ -23,7 +23,7 @@ class Human:
            hunger = int (protein)
            energy = int (sugars + polymers)
            exposure = int (determined by location/surroundings)
-           inventory = list of list['item', quantity]
+           inventory = list of list['item', quantity] (to be changed to dict)
            skills = list of strings/objects
            location = coords [x,y]
            extend me please
@@ -92,6 +92,7 @@ class Human:
             quant -= item[1]
             new = [item[0], quant]
             self.inventory[i] = new
+        # add item to floor
             
     def get_surroundings(self):
         '''returns what is in vision for human
@@ -105,9 +106,97 @@ class Human:
         '''updates exposure (wip)
         '''
         
+    def eat(self, item):
+        '''eats item
+        '''
+        
         
 person = Human('name', 20, 100, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 80, 180)     
         
         
+class Tree:
+    '''general tree population for wood
+    '''
+    
+    population = 0
+    def __init__(self, health, mass, age, has_seed=False):
+        '''init
+        '''
+        self.health = health
+        self.mass = mass
+        self.age = age
+        self.has_seed = has_seed
+        Tree.population += 1
+        
+    def take_damage(self, damage):
+        '''takes damage
+        '''
+        self.health -= damage
+    
+    def reproduction():
+        '''Can tree reproduce
+        '''
+        if has_seed:
+            make_tree()
+    
+    def make_tree():
+        '''tree reproduces
+        '''
+        
+
+class MangoTree:
+    '''plant food source
+    '''
+    
+    population = 0
+    def __init__(self, health, mass, age,  mangos=0, has_seed=False):
+        '''init
+        '''
+        self.health = health
+        self.mass = mass
+        self.age = age
+        self.has_seed = has_seed
+        self.mangoes = mangos
+        Tree.population += 1
+        
+    def take_damage(self, damage):
+        '''takes damage
+        '''
+        self.health -= damage
+    
+    def reproduction():
+        '''Can tree reproduce
+        '''
+        if has_seed:
+            make_tree()
+    
+    def make_tree():
+        '''tree reproduces
+        '''
+    
+class Pig:
+    '''its a pig
+    '''
+    
+    def __init__(self, health, mass, age, speed=3, dead=False):
+        '''make a pig
+        '''
+        self.health = health
+        self.mass = mass
+        self.age = age
+        self.speed = speed
+        
+    def take_damage(self, damage):
+        '''takes damage
+        '''
+        self.health -= damage
+    
+    
+        
         
     
+    
+    
+
+
+        
